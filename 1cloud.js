@@ -26,7 +26,9 @@
   getImages = function(token, callback) {
     return request(prepareOptions("https://api.1cloud.ru/image", token), (function(_this) {
       return function(err, res, body) {
-        return callback(res.statusCode, body);
+        if (!error) {
+          return callback(res.statusCode, body);
+        }
       };
     })(this));
   };
@@ -34,7 +36,9 @@
   getAllServers = function(token, callback) {
     return request(prepareOptions("https://api.1cloud.ru/server", token), (function(_this) {
       return function(err, res, body) {
-        return callback(res.statusCode, body);
+        if (!error) {
+          return callback(res.statusCode, body);
+        }
       };
     })(this));
   };
@@ -42,7 +46,9 @@
   getServer = function(token, id, callback) {
     return request(prepareOptions("https://api.1cloud.ru/server/" + id, token), (function(_this) {
       return function(err, res, body) {
-        return callback(res.statusCode, body);
+        if (!error) {
+          return callback(res.statusCode, body);
+        }
       };
     })(this));
   };
@@ -50,7 +56,9 @@
   getAllActions = function(token, id, callback) {
     return request(prepareOptions("https://api.1cloud.ru/server/" + id + "/action", token), (function(_this) {
       return function(err, res, body) {
-        return callback(res.statusCode, body);
+        if (!error) {
+          return callback(res.statusCode, body);
+        }
       };
     })(this));
   };
@@ -58,7 +66,9 @@
   getAction = function(token, id, actionID, callback) {
     return request(prepareOptions("https://api.1cloud.ru/server/" + id + "/action/" + actionID, token), (function(_this) {
       return function(err, res, body) {
-        return callback(res.statusCode, body);
+        if (!error) {
+          return callback(res.statusCode, body);
+        }
       };
     })(this));
   };
@@ -68,7 +78,9 @@
       Type: type
     }), (function(_this) {
       return function(err, res, body) {
-        return callback(res.statusCode, body);
+        if (!error) {
+          return callback(res.statusCode, body);
+        }
       };
     })(this));
   };
@@ -76,7 +88,9 @@
   createServer = function(token, params, callback) {
     return request(prepareOptions("https://api.1cloud.ru/server", token, 'POST', params), (function(_this) {
       return function(err, res, body) {
-        return callback(res.statusCode, body);
+        if (!error) {
+          return callback(res.statusCode, body);
+        }
       };
     })(this));
   };
@@ -84,7 +98,9 @@
   deleteServer = function(token, id, callback) {
     return request(prepareOptions("https://api.1cloud.ru/server/" + id, token, 'DELETE'), (function(_this) {
       return function(err, res, body) {
-        return callback(res.statusCode, body);
+        if (!error) {
+          return callback(res.statusCode, body);
+        }
       };
     })(this));
   };
@@ -92,7 +108,9 @@
   editServer = function(token, id, params, callback) {
     return request(prepareOptions("https://api.1cloud.ru/server/" + id, token, 'PUT', params), (function(_this) {
       return function(err, res, body) {
-        return callback(res.statusCode, body);
+        if (!error) {
+          return callback(res.statusCode, body);
+        }
       };
     })(this));
   };
