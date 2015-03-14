@@ -15,14 +15,14 @@ prepareOptions=(url,key,type='GET',data=null)->
 # token: уникальный закрытый ключ
 getImages=(token,callback)->
   request prepareOptions("https://api.1cloud.ru/image",token), (err,res,body)=>
-    if !error
+    if !err
       callback res.statusCode, body
 
 # получить список всех серверов
 # token: уникальный закрытый ключ
 getAllServers=(token,callback)->
   request prepareOptions("https://api.1cloud.ru/server",token), (err,res,body)=>
-    if !error
+    if !err
       callback res.statusCode, body
 
 # получить сервер по идентификатору
@@ -30,7 +30,7 @@ getAllServers=(token,callback)->
 # id: уникальный идентификатор сервера
 getServer=(token,id,callback)->
   request prepareOptions("https://api.1cloud.ru/server/#{id}",token), (err,res,body)=>
-    if !error
+    if !err
       callback res.statusCode, body
 
 
@@ -39,7 +39,7 @@ getServer=(token,id,callback)->
 # id: уникальный идентификатор сервера
 getAllActions=(token,id,callback)->
   request prepareOptions("https://api.1cloud.ru/server/#{id}/action",token), (err,res,body)=>
-    if !error
+    if !err
       callback res.statusCode, body
 
 # получить информацию о действии
@@ -48,7 +48,7 @@ getAllActions=(token,id,callback)->
 # actionID: уникальный идентификатор действия
 getAction=(token,id,actionID,callback)->
   request prepareOptions("https://api.1cloud.ru/server/#{id}/action/#{actionID}",token), (err,res,body)=>
-    if !error
+    if !err
       callback res.statusCode, body
 
 # управление питанием сервера
@@ -57,7 +57,7 @@ getAction=(token,id,actionID,callback)->
 # type: тип задания, которое необходимо выполнить
 setPower=(token,id,type,callback)->
   request prepareOptions("https://api.1cloud.ru/server/#{id}/action",token,'POST',Type: type), (err,res,body)=>
-    if !error
+    if !err
       callback res.statusCode, body
 
 # создать сервер
@@ -65,7 +65,7 @@ setPower=(token,id,type,callback)->
 # params: параметры сервера
 createServer=(token,params,callback)->
   request prepareOptions("https://api.1cloud.ru/server",token,'POST',params), (err,res,body)=>
-    if !error
+    if !err
       callback res.statusCode, body
 
 # удалить сервер
@@ -73,7 +73,7 @@ createServer=(token,params,callback)->
 # id: уникальный идентификатор сервера
 deleteServer=(token,id,callback)->
   request prepareOptions("https://api.1cloud.ru/server/#{id}",token,'DELETE'), (err,res,body)=>
-    if !error
+    if !err
       callback res.statusCode, body
 
 # изменить конфигурацию сервера
@@ -81,7 +81,7 @@ deleteServer=(token,id,callback)->
 # params: конфигурация сервера
 editServer=(token,id,params,callback)->
   request prepareOptions("https://api.1cloud.ru/server/#{id}",token,'PUT',params), (err,res,body)=>
-    if !error
+    if !err
       callback res.statusCode, body
 
 
